@@ -4,6 +4,10 @@ A beginner-friendly, hands-on machine learning project exploring how unsupervise
 
 This project is part of my AI/ML learning journey, inspired by *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (3rd Edition)* by Aurélien Géron.
 
+## Project workflow
+
+![Unsupervised learning workflow](images/unsupervised-learning-workflow.svg)
+
 ## Project goals
 
 - Explore clustering with **K-Means**.
@@ -29,6 +33,8 @@ The dataset is loaded programmatically; the raw dataset is not committed to this
 ### 1. K-Means clustering
 
 K-Means was evaluated with several cluster counts using silhouette score. Among the tested values, **K = 90** produced the highest silhouette score (**0.2004**). This is the best value among the values tested, not a claim of a globally optimal number of clusters.
+
+![Silhouette score by number of clusters](images/cluster-selection.svg)
 
 The cluster labels are algorithm-generated group IDs; they are not the original person identities.
 
@@ -60,6 +66,8 @@ Validation images were reconstructed from their PCA representation. Mean squared
 
 The experiments showed that different anomaly-detection approaches can respond differently to modified images. For example, the darkened image had a lower PCA reconstruction error than the original, even though its GMM likelihood was much lower. These methods can flag unusual patterns, but neither score alone proves that an image is anomalous.
 
+![PCA reconstruction error for modified images](images/pca-reconstruction-error.svg)
+
 ## Train, validation, and test split
 
 The 400 images were split using stratification:
@@ -85,18 +93,20 @@ unsupervised-learning-olivetti-faces/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
-├── notebooks/
-│   └── (project notebook will be added)
-├── images/
-│   └── (selected visualizations will be added)
-└── requirements.txt
+├── olivetti_faces_unsupervised_learning.ipynb
+├── requirements.txt
+└── images/
+    ├── README.md
+    ├── cluster-selection.svg
+    ├── pca-reconstruction-error.svg
+    └── unsupervised-learning-workflow.svg
 ```
 
 ## How to run
 
 1. Clone this repository.
 2. Install the dependencies listed in `requirements.txt`.
-3. Open the project notebook in Jupyter.
+3. Open `olivetti_faces_unsupervised_learning.ipynb` in Jupyter.
 4. Run the cells from top to bottom. The notebook will fetch the Olivetti Faces dataset through scikit-learn.
 
 ## Key learning
