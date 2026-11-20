@@ -68,6 +68,29 @@ The experiments showed that different anomaly-detection approaches can respond d
 
 ![PCA reconstruction error for modified images](images/pca-reconstruction-error.svg)
 
+## Potential real-world applications
+
+The experiments in this repository use face images for learning. The same underlying techniques can also be useful in business and technology settings. The examples below are **potential applications**, not additional experiments implemented in this repository.
+
+| Technique explored | Potential business application | Example |
+|---|---|---|
+| **K-Means clustering** | Customer segmentation | Group customers with similar purchasing patterns or engagement behavior to help teams tailor outreach. |
+| **PCA** | Simplifying high-dimensional data | Reduce a large set of customer or product features into a smaller representation while retaining much of the variation in the data. |
+| **Gaussian Mixture Model (GMM)** | Modeling behavior patterns | Learn patterns in transaction or usage data and assess how well a new observation fits the learned distribution. |
+| **Anomaly detection** | Monitoring and risk investigation | Flag unusual transactions, account activity, or operational events for further review. |
+| **Reconstruction error** | Quality and image monitoring | Identify images or records that are poorly represented by a model trained on typical examples. |
+
+### Example: Applying these ideas to a Salesforce business scenario
+
+Imagine a company has a large number of customer records in Salesforce, including purchase history, product usage, support cases, and engagement activity.
+
+- **K-Means** could help group customers with similar behavior, supporting customer segmentation.
+- **PCA** could help reduce many correlated customer attributes into fewer dimensions for analysis or visualization.
+- **GMM** could model patterns in customer activity and estimate how well new observations fit those patterns.
+- **Anomaly detection** could flag unusual changes, such as an unexpected increase in support cases, for a business team to investigate.
+
+These methods would require suitable data, careful feature selection, validation, and human review. An unusual score is a signal to investigate—not proof of fraud, customer risk, or a problem. This repository does not connect to Salesforce or train models on Salesforce customer data.
+
 ## Train, validation, and test split
 
 The 400 images were split using stratification:
